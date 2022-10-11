@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { prefix } from 'utils/prefix';
 
 export default function Header() {
   return (
@@ -10,7 +11,7 @@ export default function Header() {
             <span className="font-black text-xl flex items-center">
               <span className="mr-2 transform hover:rotate-360 hover:scale-75 transition-transform duration-500">
                 <Image
-                  src="/favicon.ico"
+                  src={`${prefix}/favicon.ico`}
                   alt="Logo"
                   layout="intrinsic"
                   height={30}
