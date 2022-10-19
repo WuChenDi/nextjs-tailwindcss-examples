@@ -2,7 +2,7 @@
 
 It can be used as a library of templates.
 
-This is a code example using [Next.js](https://nextjs.org/) and [tailwindcss](https://tailwindcss.com/).
+This is a code example using [Next.js + SSR](https://nextjs.org/) and [tailwindcss](https://tailwindcss.com/).
 
 ## Getting Started
 
