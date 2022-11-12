@@ -1,20 +1,20 @@
+import { InferGetServerSidePropsType, GetServerSideProps } from 'next'
+
 interface SSRPorps {
-  data: {
-    created_at: string
-    gid: string
-    id: string
-    owner: string
-  }[]
+  created_at: string
+  gid: string
+  id: string
+  owner: string
 }
 
-export async function getServerSideProps() {
+export const getServerSideProps: GetServerSideProps<{ data: SSRPorps[] }> = async () => {
   const response = await fetch('https://api.gid.io/gids/walletaddresses/gio1tseh0grt8j8klrdunpudflvy9lfn3rl50zdpu8')
   const data = await response.json()
 
   return { props: { data } }
 }
 
-const Ssr = ({ data }: SSRPorps) => {
+const Ssr = ({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <div className="px-4 sm:px-6 lg:px-8">
       <div className="mt-8 flex flex-col">
