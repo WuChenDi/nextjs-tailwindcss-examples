@@ -1,5 +1,9 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+  openAnalyzer: true
+})
+
+module.exports = withBundleAnalyzer({
   basePath: process.env.NEXT_PUBLIC_BASE_PATH,
   assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH,
   reactStrictMode: true,
@@ -14,6 +18,4 @@ const nextConfig = {
     })
     return config
   },
-}
-
-module.exports = nextConfig
+});
