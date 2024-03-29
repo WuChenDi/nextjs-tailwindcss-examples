@@ -1,12 +1,19 @@
+import Link from 'next/link'
+
 export default function Footer() {
+  const footerText = 'Copyright (c) 2022-PRESENT |'
+
   return (
-    <div className="flex flex-col items-center justify-center gap-6 py-10 <md:py-4">
-      <div className="flex gap-6">
-        MIT License
-      </div>
-      <div className="flex gap-6">
-        Copyright (c) 2022 wudi
-      </div>
-    </div>
+    <footer className='flex justify-center gap-2 py-10 <md:py-4'>
+      {footerText}
+      <Link
+        href='https://github.com/WuChenDi'
+        className='text-[#4493f8]'
+        target='_blank'
+        rel='noreferrer'
+      >
+        wudi
+      </Link>
+    </footer>
   )
 }
