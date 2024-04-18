@@ -9,9 +9,9 @@ This is a code example using [Next.js + SSR](https://nextjs.org/) and [tailwindc
 First, run the development server:
 
 ```bash
-pnpm dev
+bun run dev
 # or
-npm run dev
+pnpm dev
 ```
 
 ## Learn More
