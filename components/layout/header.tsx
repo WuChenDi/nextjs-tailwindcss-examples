@@ -10,7 +10,7 @@ interface NavigationType {
 
 function Navigation({ data }: { data: NavigationType[] }) {
   return (
-    <nav className='flex items-center justify-center'>
+    <nav className='flex items-center justify-center text-[#fff]'>
       {data.map((item) => (
         <NavigationItem key={item.name} {...item} />
       ))}
@@ -24,12 +24,12 @@ function NavigationItem(props: NavigationType) {
         <Link
           href={props.href}
           passHref
-          className='relative cursor-pointer py-2 px-4 text-center text-sm text-[#0b0b26] text-opacity-70 transition-all hover:text-opacity-90'
+          className='relative cursor-pointer py-2 px-4 text-center text-sm text-[#fff] transition-all hover:text-opacity-90'
         >
           {props.label}
         </Link>
       ) : (
-        <div className='relative cursor-pointer py-2 px-4 text-center text-sm text-[#0b0b26] text-opacity-70 transition-all hover:text-opacity-90'>
+        <div className='relative cursor-pointer py-2 px-4 text-center text-sm text-[#fff] transition-all hover:text-opacity-90'>
           {props.label}
         </div>
       )}
@@ -66,7 +66,7 @@ export default function Header() {
               return (
                 <span
                   key={index}
-                  className='hover:text-fun-pink hover:-mt-2 transition-all duration-500 hover:duration-100 click:goodbyeLetterAnim'
+                  className='hover:text-fun-pink hover:-mt-2 transition-all duration-500 hover:duration-100 click:goodbyeLetterAnim text-[#fff]'
                 >
                   {letter}
                 </span>
@@ -78,10 +78,9 @@ export default function Header() {
       <div>
         <Navigation data={navigation} />
       </div>
-      <div className='flex w-full items-center justify-end gap-2 lg:flex-1'>
+      <div className='flex w-full items-center justify-end gap-2 lg:flex-1 text-[#fff]'>
         <Link href='https://github.com/WuChenDi/nextjs-tailwindcss-examples' passHref>
-          {' '}
-          GitHub{' '}
+          GitHub
         </Link>
       </div>
     </div>

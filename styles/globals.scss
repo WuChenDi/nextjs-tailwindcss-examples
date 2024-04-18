@@ -1,0 +1,62 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html,
+body,
+#__next {
+}
+body {
+  @apply font-inter text-white bg-[#030319];
+
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  min-height: var(--app-height, 100vh);
+}
+
+#__next {
+  @apply relative flex flex-col overflow-hidden;
+}
+
+@function getShadows($n) {
+  $shadows: '#{random(100)}vw #{random(100)}vh #fff';
+  @for $i from 2 through $n {
+    $shadows: '#{$shadows}, #{random(100)}vw #{random(100)}vh #fff';
+  }
+  @return unquote($shadows);
+}
+
+@for $i from 1 through 5 {
+  .layer#{$i} {
+    $size: #{$i}px;
+    $duration: 5s * $i;
+    position: fixed;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    box-shadow: getShadows(100);
+    animation: moveUp $duration linear infinite;
+
+    &::after {
+      content: '';
+      position: fixed;
+      left: 0;
+      top: 100vh;
+      border-radius: inherit;
+      width: inherit;
+      height: inherit;
+      box-shadow: inherit;
+    }
+  }
+}
+
+@keyframes moveUp {
+  to {
+    transform: translateY(-100vh);
+  }
+}

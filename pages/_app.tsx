@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
-import '@/styles/globals.css'
+import '@/styles/globals.scss'
 
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
@@ -32,6 +32,11 @@ function App({ Component, pageProps }: AppProps) {
         <meta property='og:image' content='/thumbnail.png' />
       </Head>
       <div className='container'>
+        <div className='layer1'></div>
+        <div className='layer2'></div>
+        <div className='layer3'></div>
+        <div className='layer4'></div>
+        <div className='layer5'></div>
         <Header />
         <Component {...pageProps} />
         <Footer />
