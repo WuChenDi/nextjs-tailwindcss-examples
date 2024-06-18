@@ -18,8 +18,8 @@
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@cdlab996/eslint-config": "0.0.6-beta.4",
-    "@cdlab996/prettier-config": "0.0.6-beta.4",
+    "@cdlab996/eslint-config": "0.0.13",
+    "@cdlab996/prettier-config": "0.0.13",
     "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^18",
